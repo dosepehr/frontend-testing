@@ -18,6 +18,7 @@ const Counter = () => {
                         margin: '0px 10px',
                     }}
                     data-testid='reset-count'
+                    disabled={count === 0}
                 >
                     reset
                 </button>
