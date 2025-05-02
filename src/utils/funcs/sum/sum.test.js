@@ -1,12 +1,16 @@
-import { describe, expect, test } from 'vitest';
-import { sum } from './sum.js';
+import { describe, expect, it } from 'vitest';
+import { sum } from './sum';
 
-describe('sum fn tests', () => {
-    test('adds 1 + 2 to equal 3 ✅', () => {
-        expect(sum(1, 2)).toBe(3);
+describe('sum tests', () => {
+    it('should return 4', () => {
+        expect(sum(2, 2)).toBe(4);
     });
-    test('throw error on passing string ✅', () => {
-        expect(() => sum(1, 'sepehr')).toThrowError('no valid data');
+
+    it('should convert strings to int', () => {
+        expect(sum(2, '4')).toBe(6);
+    });
+
+    it('should throw an error', () => {
+        expect(() => sum(2, 'sepehr')).toThrowError();
     });
 });
-
