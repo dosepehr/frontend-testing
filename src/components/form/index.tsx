@@ -59,6 +59,7 @@ const Form = () => {
                     <input
                         type='password'
                         id='password'
+                        data-testid='password-input'
                         value={signupInput.password}
                         onChange={handleChange}
                         className={inputStyles}
