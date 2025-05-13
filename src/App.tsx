@@ -2,7 +2,8 @@ import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
 // import Counter from './components/counter';
-import Sandbox from './components/sandbox.tsx';
+// import Sandbox from './components/sandbox.tsx';
+import Form from './components/form/index.tsx';
 
 function App() {
     return (
@@ -21,7 +22,8 @@ function App() {
             </div>
             <h1>Vite + React</h1>
             {/* <Counter /> */}
-            <Sandbox />
+            {/* <Sandbox /> */}
+            <Form />
         </>
     );
 }
