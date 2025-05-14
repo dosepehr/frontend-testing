@@ -46,6 +46,7 @@ const Form = () => {
                     <input
                         type='email'
                         id='email'
+                        data-testid='email-input'
                         value={signupInput.email}
                         onChange={handleChange}
                         className={inputStyles}
