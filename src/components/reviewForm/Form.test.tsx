@@ -1,6 +1,7 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import Form from './Form';
+import userEvent from '@testing-library/user-event';
 
 export const getFormElements = () => {
     const emailInput = screen.getByRole('textbox', { name: /email/i });
@@ -35,6 +36,23 @@ describe('ReviewForm', () => {
         expect(ratingSelect).toHaveValue('');
         expect(textArea).toHaveValue('');
         expect(submitButton).toBeInTheDocument();
+    });
+
+    it('Should show error when review is short', async () => {
+        const user = userEvent.setup();
+        render(<Form onSubmit={mockOnSubmit} />);
+        const { emailInput, ratingSelect, textArea, submitButton } =
+            getFormElements();
+
+        await user.type(emailInput, 'test@example.com');
+        await user.selectOptions(ratingSelect, '5');
+        await user.type(textArea, 'Short');
+        await user.click(submitButton);
+
+        expect(
+            screen.getByText(/review must be at least 10 characters long/i)
+        ).toBeInTheDocument();
+        expect(mockOnSubmit).not.toHaveBeenCalled();
     });
 });
 
