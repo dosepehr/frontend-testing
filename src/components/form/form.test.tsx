@@ -26,7 +26,10 @@ describe('Form', () => {
     it('Should return error on email validation', async () => {
         const user = userEvent.setup();
         const emailInputElement = screen.getByTestId('email-input');
+
+        const submitFormElement = screen.getByTestId('form-submit');
         await user.type(emailInputElement, 'testgmail.com');
+        await user.click(submitFormElement);
         const emailErrorMessage = screen.getByText('Invalid email');
 
         expect(emailErrorMessage).toBeInTheDocument();

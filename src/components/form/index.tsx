@@ -82,6 +82,7 @@ const Form = () => {
                 {error && <p className='text-red-500 text-sm'>{error}</p>}
                 <button
                     type='button'
+                    data-testid='form-submit'
                     onClick={handleSubmit}
                     className={buttonsStyles}
                 >
