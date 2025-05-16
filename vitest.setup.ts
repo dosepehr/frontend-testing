@@ -4,20 +4,20 @@ import '@testing-library/jest-dom/vitest';
 import * as matchers from '@testing-library/jest-dom/vitest';
 
 expect.extend(matchers);
-import server from './src/utils/mocks/server';
+import { worker } from './src/utils/mocks/server';
 
 afterEach(() => {
     cleanup();
 });
 
 beforeAll(() => {
-    server.listen();
+    worker.listen();
 });
 afterAll(() => {
-    server.close();
+    worker.close();
 });
 
 afterEach(() => {
-    server.resetHandlers();
+    worker.resetHandlers();
 });
 
