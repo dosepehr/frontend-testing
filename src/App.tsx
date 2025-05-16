@@ -3,7 +3,8 @@ import viteLogo from '/vite.svg';
 import './App.css';
 // import Counter from './components/counter';
 // import Sandbox from './components/sandbox.tsx';
-import ReviewForm from './components/reviewForm/index.tsx';
+// import ReviewForm from './components/reviewForm/index.tsx';
+import Posts from './components/Posts/index.tsx';
 export type Review = {
     email: string;
     rating: string;
@@ -29,7 +30,8 @@ function App() {
             {/* <Counter /> */}
             {/* <Sandbox /> */}
             {/* <Form /> */}
-            <ReviewForm />
+            {/* <ReviewForm /> */}
+            <Posts />
         </>
     );
 }

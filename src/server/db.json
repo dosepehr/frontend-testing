@@ -1,14 +1,14 @@
 {
-    "posts": [
-        {
-            "id": "1",
-            "title": "testing library",
-            "likes": 10
-        },
-        {
-            "id": "2",
-            "title": "node ts course",
-            "likes": 8
-        }
-    ]
+  "posts": [
+    {
+      "id": "2",
+      "title": "node ts course",
+      "likes": 9
+    },
+    {
+      "id": "c8be",
+      "title": "dd",
+      "likes": 4
+    }
+  ]
 }
