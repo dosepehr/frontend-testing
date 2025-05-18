@@ -8,7 +8,18 @@ const meta: Meta<typeof Button> = {
     parameters: {
         layout: 'center',
     },
-
+    argTypes: {
+        children: {
+            name: 'Label',
+            control: 'text',
+            description: 'Text to display on the button',
+        },
+        className: {
+            name: 'styles',
+            control: 'text',
+            description: 'Button styles',
+        },
+    },
     // tags: ['autodocs'],
     decorators: [
         (Story) => {
@@ -23,5 +34,9 @@ export const Main: Story = {
         className: 'btn-error',
     },
 };
+export const Primary: Story = {
+    render: () => <Button className='btn-primary' >Primary</Button>,
+};
 
-export default meta
+export default meta;
+
