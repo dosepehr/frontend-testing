@@ -4,7 +4,7 @@ import './index.css';
 import App from './App.tsx';
 
 import('./utils/mocks').then(({ setupMocks }) => {
-    setupMocks(true).then(() => {
+    setupMocks(false).then(() => {
         createRoot(document.getElementById('root')!).render(
             <StrictMode>
                 <App />
